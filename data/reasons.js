@@ -22,7 +22,7 @@ const REASONS_DATA = [
     {
         emoji: "👀",
         title: "Your Eyes",
-        description:"Un oru look pothum... enna full-ah confuse pannidum😅❤️...epdinaa namma yedho pantom pola nu sottidum..andha look ka utraadha "
+        description:"Un oru look podhum... enna full-ah confuse pannidum😅❤️...epdinaa namma yedho pantom pola nu sottidum..andha look ka utraadha "
     },
     {
         emoji: "💗",
