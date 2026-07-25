@@ -1101,6 +1101,19 @@ body {
   color: rgba(45, 27, 78, 0.85);
   line-height: 1.7;
 }
+.memory-card {
+    height: auto;
+    overflow: visible;
+}
+
+.timeline-item {
+    height: auto;
+}
+
+.memory-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
 /* ============================================================
    8. REASONS SECTION (#reasons-section)
