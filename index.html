@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday dii kavyaaa ❤️ | A Special Surprise</title>
+    <meta name="description" content="A magical birthday surprise crafted with love for the most beautiful girl — Kavya. Made with ❤️ by Immanuvel.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%2780%27 font-size=%2780%27>❤️</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- COUNTDOWN LOCK SCREEN                                        -->
+    <!-- Visible until the birthday date/time is reached              -->
+    <!-- ============================================================ -->
+    <div id="countdown-screen" class="screen active">
+        <div class="countdown-particles" id="countdown-particles"></div>
+        <div class="countdown-content">
+            <div class="countdown-icon" aria-hidden="true">💝</div>
+            <h1 class="countdown-title">Oru periya surprise iruku dii unaku❤️</h1>
+            <p class="countdown-subtitle">A surprise made with lots of love...</p>
+            <div class="countdown-timer" role="timer" aria-label="Countdown to birthday">
+                <div class="time-box">
+                    <span class="time-value" id="count-days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-separator" aria-hidden="true">:</div>
+                <div class="time-box">
+                    <span class="time-value" id="count-hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-separator" aria-hidden="true">:</div>
+                <div class="time-box">
+                    <span class="time-value" id="count-minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-separator" aria-hidden="true">:</div>
+                <div class="time-box">
+                    <span class="time-value" id="count-seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- OPENING ANIMATION SCREEN                                     -->
+    <!-- Plays automatically after the countdown reaches zero         -->
+    <!-- ============================================================ -->
+    <div id="opening-screen" class="screen">
+        <div id="opening-confetti" class="opening-fx-layer"></div>
+        <div id="opening-petals" class="opening-fx-layer"></div>
+        <div id="opening-hearts" class="opening-fx-layer"></div>
+        <div class="opening-content">
+            <h1 class="opening-title">
+                <span class="opening-emoji" aria-hidden="true">🎉</span>
+                <span class="opening-typed" id="opening-typed"></span>
+                <span class="typing-cursor" aria-hidden="true">|</span>
+                <span class="opening-emoji" aria-hidden="true">🎉</span>
+            </h1>
+            <div class="opening-subtitle" id="opening-subtitle">
+                <p>Made with Love ❤️</p>
+                <p>By Your Imman</p>
+            </div>
+            <button id="enter-btn" class="magic-btn hidden" aria-label="Enter the birthday surprise">
+                Enter My Surprise ❤️
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAIN CONTENT WRAPPER                                         -->
+    <!-- Contains all birthday sections, shown after opening          -->
+    <!-- ============================================================ -->
+    <div id="main-content" style="display: none;">
+
+        <!-- Background Particle Canvas -->
+        <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+        <!-- Floating Love Notes Container -->
+        <div id="floating-notes" aria-hidden="true"></div>
+
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="hero-section" class="full-section">
+            <div class="hero-bg-effects" aria-hidden="true">
+                <!-- Floating decorative emoji elements -->
+                <span class="float-el heart" style="--d:0s;--x:10%">❤️</span>
+                <span class="float-el heart" style="--d:2s;--x:25%">💕</span>
+                <span class="float-el heart" style="--d:4s;--x:50%">💗</span>
+                <span class="float-el heart" style="--d:1s;--x:70%">💖</span>
+                <span class="float-el heart" style="--d:3s;--x:90%">❤️</span>
+                <span class="float-el flower" style="--d:0.5s;--x:15%">🌸</span>
+                <span class="float-el flower" style="--d:2.5s;--x:35%">🌺</span>
+                <span class="float-el flower" style="--d:4.5s;--x:60%">🌷</span>
+                <span class="float-el flower" style="--d:1.5s;--x:80%">🌹</span>
+                <span class="float-el butterfly" style="--d:1s;--x:20%">🦋</span>
+                <span class="float-el butterfly" style="--d:3s;--x:55%">🦋</span>
+                <span class="float-el butterfly" style="--d:5s;--x:85%">🦋</span>
+                <span class="float-el sparkle" style="--d:0s;--x:30%">✨</span>
+                <span class="float-el sparkle" style="--d:2s;--x:45%">✨</span>
+                <span class="float-el sparkle" style="--d:4s;--x:75%">✨</span>
+                <span class="float-el balloon" style="--d:0.5s;--x:5%">🎈</span>
+                <span class="float-el balloon" style="--d:2.5s;--x:40%">🎈</span>
+                <span class="float-el balloon" style="--d:4.5s;--x:65%">🎈</span>
+                <span class="float-el balloon" style="--d:1.5s;--x:95%">🎈</span>
+                <span class="float-el cloud" style="--d:0s;--x:8%">☁️</span>
+                <span class="float-el cloud" style="--d:3s;--x:50%">☁️</span>
+                <span class="float-el cloud" style="--d:6s;--x:82%">☁️</span>
+            </div>
+            <div class="hero-card glass-card" id="hero-card">
+                <div class="hero-crown" aria-hidden="true">👑</div>
+                <h1 class="hero-title">Happy Birthday My QUEEN ❤️</h1>
+                <p class="hero-subtitle">Today is all about you.</p>
+            </div>
+        </section>
+
+        <!-- ==================== PHOTO GALLERY ==================== -->
+        <section id="gallery-section" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">✨ Our Beautiful Moments 📸</h2>
+                <div class="title-decoration" aria-hidden="true"></div>
+            </div>
+            <div class="gallery-container" id="gallery-container">
+                <div class="gallery-wrapper" id="gallery-wrapper">
+                    <div class="gallery-track" id="gallery-track">
+                        <!-- JS auto-populates slides from /photos folder -->
+                    </div>
+                    <button class="gallery-btn gallery-prev" id="gallery-prev" aria-label="Previous photo">&#10094;</button>
+                    <button class="gallery-btn gallery-next" id="gallery-next" aria-label="Next photo">&#10095;</button>
+                </div>
+                <div class="gallery-dots" id="gallery-dots" role="tablist" aria-label="Gallery navigation"></div>
+                <p class="gallery-empty" id="gallery-empty" style="display:none;">
+                    📸 Add your photos to the <strong>photos</strong> folder!<br>
+                    <small>Name them photo1.jpg, photo2.jpg, etc.</small>
+                </p>
+            </div>
+            <!-- Fullscreen Overlay -->
+            <div class="gallery-fullscreen" id="gallery-fullscreen" role="dialog" aria-label="Fullscreen photo view">
+                <button class="fullscreen-close" id="fullscreen-close" aria-label="Close fullscreen">&#10005;</button>
+                <img class="fullscreen-img" id="fullscreen-img" alt="Fullscreen view of our moment">
+            </div>
+        </section>
+
+        <!-- ==================== VIDEO GALLERY ==================== -->
+        <section id="video-section" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">📽️ Nammaloda Special snaps ❤️</h2>
+                <div class="title-decoration" aria-hidden="true"></div>
+            </div>
+            <div class="video-container" id="video-container">
+                <div class="video-grid" id="video-grid">
+                    <!-- JS auto-populates video cards -->
+                </div>
+                <p class="video-empty" id="video-empty" style="display:none;">
+                    📽️ Add your videos to the <strong>videos</strong> folder!<br>
+                    <small>Name them video1.mp4, video2.mp4, etc.</small>
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== LOVE LETTER ==================== -->
+        <section id="letter-section" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">💌 A Letter For You</h2>
+                <div class="title-decoration" aria-hidden="true"></div>
+            </div>
+            <div class="letter-wrapper">
+                <div class="letter-envelope" id="letter-envelope" role="button" tabindex="0" aria-label="Click to open the love letter">
+                    <div class="envelope-body"></div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-seal" id="letter-seal">💌</div>
+                    <p class="envelope-label">Click to open</p>
+                </div>
+                <div class="letter-paper" id="letter-paper">
+                    <div class="paper-lines" aria-hidden="true"></div>
+                    <div class="letter-text" id="letter-text">
+                        <p class="letter-placeholder">Opening your letter...</p>
+                    </div>
+                    <div class="letter-footer-sig">With love ❤️</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MEMORIES TIMELINE ==================== -->
+        <section id="memories-section" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">💫 Our Beautiful Memories</h2>
+                <div class="title-decoration" aria-hidden="true"></div>
+            </div>
+            <div class="timeline" id="timeline">
+                <!-- JS populates from memories.js -->
+            </div>
+        </section>
+
+        <!-- ==================== REASONS I LOVE YOU ==================== -->
+        <section id="reasons-section" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">💕 Reasons Why I Love You</h2>
+                <div class="title-decoration" aria-hidden="true"></div>
+            </div>
+            <div class="reasons-grid" id="reasons-grid">
+                <!-- JS populates from reasons.js -->
+            </div>
+        </section>
+
+        <!-- ==================== BIRTHDAY WISHES ==================== -->
+        <section id="wishes-section" class="content-section">
+            <div class="wishes-card glass-card" id="wishes-card">
+                <div class="wishes-icon" aria-hidden="true">🎂</div>
+                <h2 class="wishes-heading">Birthday Wishes ✨</h2>
+                <p class="wishes-text">
+                    May this birthday bring endless happiness, smiles, laughter,
+                    success, peace and beautiful memories, and that beautiful
+                    memeries with me into your life.(I WISH RII....THIS TO BE
+                    HAPPENED).And epdiyo unaku finnaly 18 years aagirichci...
+                    inime jolly dhaa laa...epavum happy yaa iru dii thangameyyy❤️😘
+
+                </p>
+                <div class="wishes-sparkles" aria-hidden="true">
+                    <span class="sparkle-star" style="--i:1">✦</span>
+                    <span class="sparkle-star" style="--i:2">✧</span>
+                    <span class="sparkle-star" style="--i:3">✦</span>
+                    <span class="sparkle-star" style="--i:4">✧</span>
+                    <span class="sparkle-star" style="--i:5">✦</span>
+                    <span class="sparkle-star" style="--i:6">✧</span>
+                    <span class="sparkle-star" style="--i:7">✦</span>
+                    <span class="sparkle-star" style="--i:8">✧</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SURPRISE GIFT ==================== -->
+        <section id="gift-section" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">🎁 A Special Surprise</h2>
+                <div class="title-decoration" aria-hidden="true"></div>
+            </div>
+            <div class="gift-area" id="gift-area">
+                <div class="gift-box" id="gift-box">
+                    <div class="gift-lid" id="gift-lid">
+                        <div class="gift-bow" aria-hidden="true">
+                            <div class="bow-left"></div>
+                            <div class="bow-right"></div>
+                            <div class="bow-knot"></div>
+                        </div>
+                    </div>
+                    <div class="gift-base">
+                        <div class="gift-ribbon-v" aria-hidden="true"></div>
+                        <div class="gift-ribbon-h" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <button class="magic-btn gift-open-btn" id="gift-open-btn" aria-label="Open your surprise gift">
+                    Open Your Surprise 🎁
+                </button>
+                <div class="gift-reveal" id="gift-reveal" style="display: none;">
+                    <div id="gift-effects" aria-hidden="true"></div>
+                    <h1 class="gift-love-text">I LOVE YOU ❤️</h1>
+                    <p> No matter what happens, I'll always stand beside you.
+                    epavume un side dhan dii naanu..nee enna dhan pandrundhaalum un kuudavey dhaan dii irupen dii magaleyy🤌💗💋 </p>
+                    <div class="gift-heart-pulse" aria-hidden="true">
+                        <span class="pulse-heart">❤️</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ENDING SCREEN ==================== -->
+        <section id="ending-section" class="full-section">
+            <div class="ending-sky" aria-hidden="true">
+                <div class="ending-moon"></div>
+                <div class="ending-stars" id="ending-stars"></div>
+            </div>
+            <div class="ending-ground" aria-hidden="true">
+                <div class="ending-couple">
+                    <div class="silhouette-person silhouette-left"></div>
+                    <div class="silhouette-person silhouette-right"></div>
+                    <div class="silhouette-heart">❤️</div>
+                </div>
+            </div>
+            <div class="ending-text-wrap">
+                <p class="ending-message">Thank you for being the most beautiful part of my life.</p>
+                <h2 class="ending-forever">I Love You Forever ❤️</h2>
+                <p class="ending-sign">— Immanuvel</p>
+            </div>
+        </section>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer id="footer">
+            <p class="footer-made">Made with ❤️ by your Imman</p>
+            <p class="footer-special">31 July Birthday Special</p>
+        </footer>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- DATA FILES — Edit these to customize your content            -->
+    <!-- ============================================================ -->
+    <script src="letter/letter.js"></script>
+    <script src="memories/memories.js"></script>
+    <script src="data/reasons.js"></script>
+
+    <!-- ============================================================ -->
+    <!-- APPLICATION SCRIPTS                                          -->
+    <!-- ============================================================ -->
+    <script src="js/particles.js"></script>
+    <script src="js/app.js" defer></script>
+
+</body>
+</html>
