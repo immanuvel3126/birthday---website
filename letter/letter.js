@@ -13,5 +13,9 @@
 //
 // ============================================================
 
-const LOVE_LETTER = `Adiyeyyyyy kavya chellooo,
-                               happy birthday dii thangooo !!!....inniku oru romba special aana day unaku and solla pona namakunu sollalaam....en chellathuku officially 18 aagirichi'
+const LOVE_LETTER = `Adiyeyyy Kavya thangooooo,
+                              adiyeyyyy kavya chelloooooo.....Happy Birthday dii thangameyyyyy❤️💋.... Inniku romba romba oru special aana dayy unaku and solla pona namaku 😚... officially 18 aagitta 🤭semma dhaan inime....adult taa maaritta pola nee enna dhan irundhaalum nee enaku chinna kolandha dhan seriii yaa dii thangameyyyyyy...Nee ketadhu unaku nyabagam irukanu enaku thrla enaku letter eludhi kudu nu keta adha naa nyabagam vachi iruka maata nu ninachitu irupa aana paathala enna epdi nyabagam vachiunaku idha ready pandruken nuu...nee idha fulla padichi paapiya nu thrla apdi nee idha 12:00 varaikum irundhu padichi paatha ilana clg varadhuku munnadi padichi paatha unaku theriya varum unaku naa nerlayum oru written letter thara poren nu
+
+
+With all my love,
+Immanuvel`
