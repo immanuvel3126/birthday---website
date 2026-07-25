@@ -2000,3 +2000,7 @@ body.gift-glow {
     min-width: 58px;
   }
 }
+.timeline-item {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
