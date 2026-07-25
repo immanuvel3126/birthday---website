@@ -14,4 +14,4 @@
 // ============================================================
 
 const LOVE_LETTER = `Adiyeyyyyy kavya chellooo,
-                               happy birthday dii thangooo !!!....inniku oru romba special aana day unaku and solla pona namakunu sollalaam....en chellathuku officially 18 aagirichi
+                               happy birthday dii thangooo !!!....inniku oru romba special aana day unaku and solla pona namakunu sollalaam....en chellathuku officially 18 aagirichi'
