@@ -4,22 +4,21 @@
 // Month is 0-indexed: 0=Jan, 1=Feb, ..., 6=Jul, ..., 11=Dec
 // ============================================================
 const CONFIG = {
-    birthdayDate: new Date(2026, 6, 25,8,57,0 ), // July 1, 2026, 12:00 AM
-    birthdayGirl: 'kavya',
+    birthdayDate: new Date(2026, 6, 1, 0, 0, 0), // July 1, 2026, 12:00 AM
+    birthdayGirl: 'Kavya',
     createdBy: 'Immanuvel',
     maxPhotos: 10,
-    maxVideos: 10,
+    maxVideos: 5,
     autoSlideInterval: 4000,
     photoFormats: ['jpg', 'jpeg', 'png', 'webp'],
     videoFormats: ['mp4', 'webm', 'ogg'],
     loveNotes: [
         '❤️ I Love You',
-        '❤️ MY QUEEN',
+        '❤️ My Princess',
         '❤️ My Happiness',
         '❤️ Forever Together',
-        '❤️ My CHELLO',
-        '❤️ Love You',
-        '❤️ my kutti ulagam'
+        '❤️ My Sunshine',
+        '❤️ Love You Forever'
     ]
 };
 
@@ -682,15 +681,15 @@ class VideoManager {
             const video = document.createElement('video');
             video.src = src;
             video.preload = 'metadata';
-
+            
             // On desktop browsers loadedmetadata works well
             video.onloadedmetadata = () => resolve(src);
-
+            
             // Fallback for some browsers / protocols
             video.oncanplay = () => resolve(src);
-
+            
             video.onerror = () => reject();
-
+            
             // Timeout to prevent hanging if file doesn't exist
             setTimeout(() => reject(), 1500);
         });
@@ -734,7 +733,7 @@ class VideoManager {
 
             const info = document.createElement('div');
             info.className = 'video-info';
-
+            
             const title = document.createElement('h3');
             title.className = 'video-title';
             title.textContent = `Our Special Moment ${videoData.index} ❤️`;
@@ -1272,7 +1271,7 @@ class ScrollManager {
     }
 
     init() {
-        // Observer for main content sections
+        // Observer for main content sections (0.01 threshold + 100px margin so it triggers as soon as section approaches)
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1281,8 +1280,8 @@ class ScrollManager {
                 }
             });
         }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.01,
+            rootMargin: '100px 0px 100px 0px'
         });
 
         // Observe all content sections
@@ -1291,21 +1290,20 @@ class ScrollManager {
             this.observer.observe(section);
         });
 
-        // Separate observer for timeline items (staggered animation)
+        // Observer for timeline items
         this.timelineObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Add staggered delay based on position
                     const items = document.querySelectorAll('.timeline-item');
                     const index = Array.from(items).indexOf(entry.target);
-                    entry.target.style.transitionDelay = (index * 0.15) + 's';
+                    entry.target.style.transitionDelay = (index * 0.1) + 's';
                     entry.target.classList.add('animate-in');
                     this.timelineObserver.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.05,
-            rootMargin: '0px 0px -10px 0px'
+            threshold: 0.01,
+            rootMargin: '100px 0px 100px 0px'
         });
 
         // Observe timeline items
@@ -1313,6 +1311,36 @@ class ScrollManager {
         timelineItems.forEach(item => {
             this.timelineObserver.observe(item);
         });
+
+        // Fail-safe visibility checker (handles refresh, zoom changes, mobile viewports, or delayed observer callbacks)
+        const checkVisibility = () => {
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            sections.forEach(section => {
+                if (!section.classList.contains('animate-in')) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < viewportHeight + 150 && rect.bottom > -150) {
+                        section.classList.add('animate-in');
+                    }
+                }
+            });
+
+            timelineItems.forEach((item, index) => {
+                if (!item.classList.contains('animate-in')) {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top < viewportHeight + 150 && rect.bottom > -150) {
+                        item.style.transitionDelay = (index * 0.1) + 's';
+                        item.classList.add('animate-in');
+                    }
+                }
+            });
+        };
+
+        // Run fail-safe check immediately, on scroll, and on resize
+        setTimeout(checkVisibility, 50);
+        setTimeout(checkVisibility, 300);
+        window.addEventListener('scroll', checkVisibility, { passive: true });
+        window.addEventListener('resize', checkVisibility, { passive: true });
     }
 }
 
