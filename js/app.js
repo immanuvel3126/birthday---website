@@ -8,17 +8,18 @@ const CONFIG = {
     birthdayGirl: 'Kavya',
     createdBy: 'Immanuvel',
     maxPhotos: 10,
-    maxVideos: 5,
+    maxVideos: 10,
     autoSlideInterval: 4000,
     photoFormats: ['jpg', 'jpeg', 'png', 'webp'],
     videoFormats: ['mp4', 'webm', 'ogg'],
     loveNotes: [
         '❤️ I Love You',
-        '❤️ My Princess',
+        '❤️ My Queen',
         '❤️ My Happiness',
         '❤️ Forever Together',
-        '❤️ My Sunshine',
-        '❤️ Love You Forever'
+        '❤️ My CHELLLO',
+        '❤️ Love You',
+        '❤️ my kutti ulagam'
     ]
 };
 
