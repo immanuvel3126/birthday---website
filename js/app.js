@@ -4,7 +4,7 @@
 // Month is 0-indexed: 0=Jan, 1=Feb, ..., 6=Jul, ..., 11=Dec
 // ============================================================
 const CONFIG = {
-    birthdayDate: new Date(2026, 6, 1, 0, 0, 0), // July 1, 2026, 12:00 AM
+    birthdayDate: new Date(2026, 6, 31, 0, 0, 0), // July 1, 2026, 12:00 AM
     birthdayGirl: 'Kavya',
     createdBy: 'Immanuvel',
     maxPhotos: 10,
